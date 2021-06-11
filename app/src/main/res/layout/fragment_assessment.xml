@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.kotlintrivia.assessment.AssessmentFragment">
+
+    <data>
+        <variable
+            name="assessmentViewModel"
+            type="com.example.kotlintrivia.assessment.AssessmentViewModel" />
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <!-- TODO: Update blank fragment layout -->
+
+            <TextView
+                android:id="@+id/dummy_questions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                android:text="@{assessmentViewModel.selectedQuestions.toString()}"
+                app:layout_constraintBottom_toTopOf="@+id/dummy_correct"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:id="@+id/dummy_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="204dp"
+                android:text="dummy correct"
+                app:layout_constraintBottom_toTopOf="@+id/dummy_incorrect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.522"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/dummy_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dummy_incorrect"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
