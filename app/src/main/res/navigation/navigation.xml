@@ -22,7 +22,10 @@
         tools:layout="@layout/fragment_assessment" >
 
         <argument android:name="questionList"
-            app:argType="com.example.kotlintrivia.model.ResultX[]"/>
+            app:argType="com.example.kotlintrivia.model.Result[]"/>
+        <action
+            android:id="@+id/action_assessmentFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
 
         <!--
             <argument
@@ -33,4 +36,9 @@
                 app:argType="string[]" />
                 -->
     </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.example.kotlintrivia.score.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
 </navigation>

@@ -40,8 +40,8 @@ private val retrofit = Retrofit.Builder()
  * A public interface that exposes the [getProperties] method
  */
 interface QuestionsApiService2 {
-    @GET("api.php?amount=10&type=multiple")
-    suspend fun getProperties(): GeneralKnowledge
+    @GET("api.php?amount=10&category=21&difficulty=easy&type=multiple")
+    fun getProperties(): Call<Assessment>
 }
 
 /**

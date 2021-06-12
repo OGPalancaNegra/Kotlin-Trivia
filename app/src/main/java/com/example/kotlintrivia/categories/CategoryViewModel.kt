@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.awaitResponse
 
@@ -21,43 +22,50 @@ class CategoryViewModel: ViewModel() {
 
 
 
-    private val _navigateToSelectedProperty = MutableLiveData<List<ResultX>>()
+    private val _navigateToSelectedProperty = MutableLiveData<List<com.example.kotlintrivia.model.Result>>()
 
-    val navigateToSelectedProperty: LiveData<List<ResultX>> get() = _navigateToSelectedProperty
+    val navigateToSelectedProperty: LiveData<List<com.example.kotlintrivia.model.Result>> get() = _navigateToSelectedProperty
 
+    private val _response = MutableLiveData<GeneralKnowledge>()
 
+    val response: LiveData<GeneralKnowledge> get() = _response
 
     fun displayKnowledgeQuestion(){
 
-
-
         viewModelScope.launch {
             try {
-            val data = QuestionsApi.retrofitService.getProperties().results
 
-            _navigateToSelectedProperty.value = data
+
+            val data = QuestionsApi.retrofitService.getProperties()
+
+            _navigateToSelectedProperty.value = data.awaitResponse().body()!!.results
 
             //_displayText.value = QuestionsApi.retrofitService.getTextList("What is the elemental symbol for mercury?")
 
             }catch (e: Exception){
-                _navigateToSelectedProperty.value = null
+
+                _navigateToSelectedProperty.value = ArrayList<com.example.kotlintrivia.model.Result>()
             }
         }
         }
 
-    /*fun displayKnowledge(){
+    fun displayKnowledge(){
 
         GlobalScope.launch(Dispatchers.IO) {
             val response = QuestionsApi.retrofitService.getProperties().awaitResponse()
             if (response.isSuccessful){
-                val data = response.body()!!
-                //_navigateToSelectedProperty.value = data
+                val data = response.body()!!.results
+
+                withContext(Dispatchers.Main){
+                    _navigateToSelectedProperty.value = data
+                }
+
             }
 
         }
 
 
-    }*/
+    }
 
 
     fun displayQuestionsComplete() {

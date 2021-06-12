@@ -20,7 +20,6 @@
         >
 
 
-
         <TextView
             android:id="@+id/category_selection_tv"
             style="@style/MainTextStyles"
@@ -35,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="dummy"
+            android:text="@{categoryViewModel.navigateToSelectedProperty.toString()}"
             android:textSize="10sp" />
 
 
@@ -44,7 +43,7 @@
             android:id="@+id/category1_btn"
             android:text="@string/category1_txt"
             style="@style/CategoryButtonStyles"
-            android:onClick="@{()-> categoryViewModel.displayKnowledgeQuestion()}"
+            android:onClick="@{()-> categoryViewModel.displayKnowledge()}"
             />
 
         <com.google.android.material.button.MaterialButton
@@ -59,6 +58,7 @@
             android:id="@+id/category3_btn"
             android:text="@string/category3_txt"
             style="@style/CategoryButtonStyles"
+
             />
 
     </LinearLayout>

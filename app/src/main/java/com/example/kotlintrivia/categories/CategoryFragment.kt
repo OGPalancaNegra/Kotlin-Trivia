@@ -10,6 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
 import com.example.kotlintrivia.databinding.FragmentCategoryBinding
+import com.example.kotlintrivia.model.GeneralKnowledge
+import com.example.kotlintrivia.model.QuestionsApi
+import com.example.kotlintrivia.model.QuestionsApiService2
+import kotlin.collections.toTypedArray as toTypedArray1
 
 
 class CategoryFragment : Fragment() {
@@ -37,10 +41,13 @@ class CategoryFragment : Fragment() {
         //fragmentCategoryBinding.categoryViewModel = categoryViewModel
 
 
+
+
+
+
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
             if (it != null){
-                this.findNavController().navigate(CategoryFragmentDirections.actionCategoryFragmentToAssessmentFragment(it.toTypedArray()))
-                //fragmentCategoryBinding.dummyText.text = it.toString()
+                this.findNavController().navigate(CategoryFragmentDirections.actionCategoryFragmentToAssessmentFragment(it.toTypedArray1()))
                 viewModel.displayQuestionsComplete()
             }
         })
@@ -48,6 +55,8 @@ class CategoryFragment : Fragment() {
         // Inflate the layout for this fragment
         return fragmentCategoryBinding.root
     }
+
+
 
 
 }

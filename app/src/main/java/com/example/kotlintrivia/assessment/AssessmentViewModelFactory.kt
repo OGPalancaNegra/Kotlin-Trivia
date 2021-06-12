@@ -3,11 +3,11 @@ package com.example.kotlintrivia.assessment
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.kotlintrivia.model.Questions
+import com.example.kotlintrivia.model.GeneralKnowledge
 
 
 class AssessmentViewModelFactory(
-    private val selectedQuestionList: List<Questions>,
+    private val selectedQuestionList: List<GeneralKnowledge>,
     private val application: Application
 ) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
