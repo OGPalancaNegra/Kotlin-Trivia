@@ -8,4 +8,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="submit_button">Submit</string>
     <string name="you_scored">You Scored</string>
+    <string name="exit_app">Exit App</string>
+    <string name="test_again">TEST AGAIN</string>
 </resources>

@@ -6,20 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.kotlintrivia.R
 import com.example.kotlintrivia.databinding.FragmentScoreBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 
 class ScoreFragment : Fragment() {
 
+    private lateinit var scoreViewModel: ScoreViewModel
+    private lateinit var scoreViewModelFactory: ScoreViewModelFactory
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,9 +27,30 @@ class ScoreFragment : Fragment() {
 
         val scoreBinding = FragmentScoreBinding.inflate(inflater)
 
+        scoreBinding.lifecycleOwner = this
+
+
         val passedScore = arguments?.getInt("correct")
 
-        scoreBinding.scoreText.text = "You scored ${passedScore.toString()}/10"
+        scoreViewModelFactory = passedScore?.let { ScoreViewModelFactory(it) }!!
+
+        scoreViewModel = ViewModelProvider(this, scoreViewModelFactory).get(ScoreViewModel::class.java)
+
+        scoreBinding.scoreViewModel = scoreViewModel
+
+
+        scoreViewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
+            if (playAgain) {
+                findNavController().navigate(ScoreFragmentDirections.actionScoreFragmentToCategoryFragment())
+                scoreViewModel.onTestAgainComplete()
+            }
+        })
+
+        scoreViewModel.exitApp.observe(viewLifecycleOwner, Observer { exitApp ->
+            if (exitApp){
+                activity?.finish()
+            }
+        })
 
 
 
