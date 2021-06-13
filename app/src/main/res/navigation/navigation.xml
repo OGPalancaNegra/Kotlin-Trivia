@@ -53,4 +53,12 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment2"
+        android:name="com.example.kotlintrivia.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/rulesFragment2"
+        android:name="com.example.kotlintrivia.RulesFragment"
+        android:label="RulesFragment" />
 </navigation>

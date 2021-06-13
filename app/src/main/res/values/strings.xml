@@ -10,4 +10,10 @@
     <string name="you_scored">You Scored</string>
     <string name="exit_app">Exit App</string>
     <string name="test_again">TEST AGAIN</string>
+    <string name="rules">Rules</string>
+
+    <string name="rules_text">Select a 10 question Trivia Assessment between 3 categories. Once Selected you have to select between one of the 4 multiple choices provided. After completetion of assessment will get redirected to a score fragment where user score will be listed aswell as buttons to either play again or leave app</string>
+    <string name="trivia_rules">Trivia Rules</string>
+    <string name="about">About</string>
+    <string name="about_text">This Trivia is all about putting in fundamental android development concepts such as MVVM, JSON API and Retrofit into use to understand how it all comes together</string>
 </resources>
