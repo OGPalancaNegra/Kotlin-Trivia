@@ -25,6 +25,8 @@
 
             <!-- TODO: Update blank fragment layout -->
 
+
+
             <androidx.cardview.widget.CardView
                 app:flow_horizontalAlign="center"
                 android:id="@+id/questionCard"
@@ -41,19 +43,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
+
                 <TextView
+
                     android:id="@+id/questionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:layout_marginBottom="@dimen/category_selection_mrgnsz"
                     style="@style/MainTextStyles"
+                    android:textSize="15dp"
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{assessmentFragment.currentQuestion.question}"
+                    android:text="@{assessmentViewModel.currentQuestion.question}"
                     tools:text="What color is the Android mascot?" />
+
 
             </androidx.cardview.widget.CardView>
             <RadioGroup
@@ -74,10 +81,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/question_vertical_margin"
-                    android:checked="true"
                     android:textSize="@dimen/answer_text_size"
-                    android:text="@{assessmentFragment.answers[0]}"
-                    tools:text="Blue" />
+                    android:text="@{assessmentViewModel.answers[0]}"
+                    tools:text="Blue"
+                    android:onClick="@{(v)->assessmentViewModel.setAnswerIndex(0)}"/>
 
                 <RadioButton
                     android:id="@+id/secondAnswerRadioButton"
@@ -86,7 +93,8 @@
                     android:textSize="@dimen/answer_text_size"
                     android:layout_marginBottom="@dimen/question_vertical_margin"
                     tools:text="Green"
-                    android:text="@{assessmentFragment.answers[1]}"/>
+                    android:text="@{assessmentViewModel.answers[1]}"
+                    android:onClick="@{(v)->assessmentViewModel.setAnswerIndex(1)}"/>/>
 
                 <RadioButton
                     android:id="@+id/thirdAnswerRadioButton"
@@ -95,7 +103,8 @@
                     android:layout_marginBottom="@dimen/question_vertical_margin"
                     android:textSize="@dimen/answer_text_size"
                     tools:text="Yellow"
-                    android:text="@{assessmentFragment.answers[2]}"/>
+                    android:text="@{assessmentViewModel.answers[2]}"
+                    android:onClick="@{(v)->assessmentViewModel.setAnswerIndex(2)}"/>/>
 
                 <RadioButton
                     android:id="@+id/fourthAnswerRadioButton"
@@ -104,7 +113,9 @@
                     android:textSize="@dimen/answer_text_size"
                     android:layout_marginBottom="@dimen/question_vertical_margin"
                     tools:text="Red"
-                    android:text="@{assessmentFragment.answers[3]}"/>
+                    android:text="@{assessmentViewModel.answers[3]}"
+                    android:onClick="@{(v)->assessmentViewModel.setAnswerIndex(3)}"/>
+                    />
 
                 <RadioButton
                     android:id="@+id/fifthAnswerRadioButton"
@@ -113,8 +124,8 @@
                     android:textSize="@dimen/answer_text_size"
                     android:layout_marginBottom="@dimen/question_vertical_margin"
                     tools:text="Red"
-                    android:text="@{assessmentFragment.currentQuestion.incorrect_answers[3]}"
-                   />
+                    android:text="@{assessmentViewModel.currentQuestion.incorrect_answers[3]}"
+                    />
 
             </RadioGroup>
 
@@ -128,7 +139,8 @@
                 android:text="@string/submit_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/questionRadioGroup" />
+                app:layout_constraintTop_toBottomOf="@+id/questionRadioGroup"
+        android:onClick="@{(v)->assessmentViewModel.submitAnswer(assessmentViewModel.assessmentBinding)}"/>
 
 
 

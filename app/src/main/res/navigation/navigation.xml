@@ -26,19 +26,15 @@
         <action
             android:id="@+id/action_assessmentFragment_to_scoreFragment"
             app:destination="@id/scoreFragment" />
-
-        <!--
-            <argument
-                android:name="textList"
-                app:argType="string[]" />
-            <argument
-                android:name="wrongAnswerList"
-                app:argType="string[]" />
-                -->
     </fragment>
     <fragment
         android:id="@+id/scoreFragment"
         android:name="com.example.kotlintrivia.score.ScoreFragment"
         android:label="fragment_score"
-        tools:layout="@layout/fragment_score" />
+        tools:layout="@layout/fragment_score" >
+        <argument
+            android:name="correctAnswers"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
