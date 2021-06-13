@@ -1,13 +1,14 @@
 package com.example.kotlintrivia.categories
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import com.example.kotlintrivia.R
 
 import com.example.kotlintrivia.databinding.FragmentCategoryBinding
 import kotlin.collections.toTypedArray as toTypedArray1
@@ -48,9 +49,20 @@ class CategoryFragment : Fragment() {
                 viewModel.displayQuestionsComplete()
             }
         })
+
+
+        setHasOptionsMenu(true)
         //FragmentCategoryBinding
         // Inflate the layout for this fragment
         return fragmentCategoryBinding.root
+    }
+
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
 
