@@ -10,9 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
 import com.example.kotlintrivia.databinding.FragmentCategoryBinding
-import com.example.kotlintrivia.model.GeneralKnowledge
-import com.example.kotlintrivia.model.QuestionsApi
-import com.example.kotlintrivia.model.QuestionsApiService2
 import kotlin.collections.toTypedArray as toTypedArray1
 
 

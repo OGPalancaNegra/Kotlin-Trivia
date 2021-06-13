@@ -51,6 +51,7 @@
             android:id="@+id/category2_btn"
             android:text="@string/category2_txt"
             style="@style/CategoryButtonStyles"
+            android:onClick="@{()->categoryViewModel.displayComputers()}"
             />
 
         <com.google.android.material.button.MaterialButton
@@ -58,6 +59,7 @@
             android:id="@+id/category3_btn"
             android:text="@string/category3_txt"
             style="@style/CategoryButtonStyles"
+            android:onClick="@{()-> categoryViewModel.displayScience()}"
 
             />
 

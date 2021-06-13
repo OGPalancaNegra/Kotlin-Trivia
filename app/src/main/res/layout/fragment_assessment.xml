@@ -117,20 +117,7 @@
                     android:onClick="@{(v)->assessmentViewModel.setAnswerIndex(3)}"/>
                     />
 
-                <RadioButton
-                    android:id="@+id/fifthAnswerRadioButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/answer_text_size"
-                    android:layout_marginBottom="@dimen/question_vertical_margin"
-                    tools:text="Red"
-                    android:text="@{assessmentViewModel.currentQuestion.incorrect_answers[3]}"
-                    />
-
             </RadioGroup>
-
-
-
 
 
     <Button

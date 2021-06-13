@@ -1,14 +1,12 @@
 package com.example.kotlintrivia.model
 
-import com.google.gson.JsonObject
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
-import java.util.*
+
 
 private const val BASE_URL = "https://opentdb.com/"
 
@@ -39,14 +37,16 @@ private val retrofit = Retrofit.Builder()
 /**
  * A public interface that exposes the [getProperties] method
  */
-interface QuestionsApiService2 {
-    @GET("api.php?amount=10&category=21&difficulty=easy&type=multiple")
+interface ComputersAPIService {
+    @GET("api.php?amount=10&category=18&difficulty=easy&type=multiple")
     fun getProperties(): Call<Assessment>
 }
+
+// general knowledge string: api.php?amount=10&category=21&difficulty=easy&type=multiple
 
 /**
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
-object QuestionsApi {
-    val retrofitService : QuestionsApiService2 by lazy  { retrofit.create(QuestionsApiService2::class.java) }
+object ComputersQAPI {
+    val RETROFIT_SERVICE : ComputersAPIService by lazy  { retrofit.create(ComputersAPIService::class.java) }
 }

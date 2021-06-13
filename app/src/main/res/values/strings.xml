@@ -3,7 +3,7 @@
     <string name="category_selection_txt">What would you like to be tested on?</string>
     <string name="category1_txt">General Knowledge</string>
     <string name="category2_txt">Computer Science</string>
-    <string name="category3_txt">Fresh Food Cut</string>
+    <string name="category3_txt">Science and Nature</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="submit_button">Submit</string>
