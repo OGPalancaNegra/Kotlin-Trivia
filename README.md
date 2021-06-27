@@ -24,3 +24,6 @@ Implement Jetpack libraries Navigation, Databinding and Lifecycle to respectivel
 * Moshi
 * Kotlin Courtines
 # App Images
+![category selection](https://user-images.githubusercontent.com/56201348/123562134-a4894500-d7a4-11eb-9f33-0643b9ef195b.jpg)
+![assessment](https://user-images.githubusercontent.com/56201348/123562137-a81ccc00-d7a4-11eb-9420-9267b8bbde24.jpg)
+![fragment score](https://user-images.githubusercontent.com/56201348/123562138-a9e68f80-d7a4-11eb-86ef-69e97e7faf2c.jpg)
